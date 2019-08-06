@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import LoadingIndicator from '../components/LoadingIndicator';
 
 class MyProfilePage extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class MyProfilePage extends React.Component {
         }
     }
 
-    componentDidMount() {
+    componentDidMount(){
         axios({
             method: 'GET',
             url: (`https://insta.nextacademy.com/api/v1/images/me`),
@@ -28,11 +29,16 @@ class MyProfilePage extends React.Component {
                 .catch(error => {
                     console.log('ERROR: ', error.result)
                 })
-            }}
+            })
+        }
 
     render() {
-        const { userImages, isLoading } = this.state
+        const {isLoading } = this.state
         return (
+            <div>
+                {isLoading?(
+                    <LoadingIndicator/>
+                ) :(
             <div>
                 <div className="userprofileContainer col-md-12">
                     <div className="myrow row">
@@ -49,7 +55,10 @@ class MyProfilePage extends React.Component {
                 </div>
 
             </div >
+                )
+            }
+            </div>
         )
-    }
+}
 }
 export default MyProfilePage
