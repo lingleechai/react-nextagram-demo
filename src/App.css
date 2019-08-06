@@ -1,33 +1,118 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+  font-size: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+#nextagram{
+  margin-left: 10px;
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#form{
+  margin-left: 45%;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#signIn{
+  position: relative;
+  margin :15px;
+}
+
+#signUp{
+  position: relative;
+}
+
+#user{
+    position: relative;
+    margin :15px;
+}
+
+.container{
+  display: flex;
+  position: absolute;
+}
+
+h1{
+  font-weight: lighter;
+}
+
+h4 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bolder;
+  margin:30px;
+  color :white;
+  /* text-transform: uppercase; */
+  text-shadow: 2px 2px 4px #52312b;
+  /* text-shadow: 1px 1px #9e7d6b; */
+}
+
+.userpreview{
+  display: flex;
+  width: 100vw;
+  background-color: #c1d1d7;
+  /* border:solid 2px #61dafb; */
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.profileimgcontainer{
+background-color: #ae6b60;
+padding :30px;
+
+}
+
+
+.imgbox{
+  display: flex;
+  background-color : #9e7d6b;
+  /* border: solid 2px salmon; */
+  margin:0 0 5 0;
+  padding: 0;
+}
+
+.profileName{
+  color:white;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 30px;
+  /* text-transform: uppercase; */
+}
+
+.userprofileContainer{
+  position: flex;
+  width: 100%;
+  background-color: #ae6b60;
+}
+
+.profileInfo {
+  margin: 40px;
+  display: table;
+  vertical-align: middle;
+}
+
+.profileimg{
+  display: table-cell;
+  vertical-align:middle;
+}
+
+.btnSeeMore{
+  background-color: #e6b9b1;
+  color: #52312b;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  margin-top: 30px;
+  width: 100px;
+  border-radius: 15px;
+  height: 50px;
+}
+
+body{
+  padding: 0;
+}
+
+button.nav-link:focus {
+  outline: none;
 }
