@@ -50,19 +50,29 @@ export default class Example extends React.Component {
   }
 
   toggleLoggedIn = ()=> {
-    this.setState({
-      isLoggedIn: !this.state.isLoggedIn
-    })
+    if(localStorage.length === 0){
+      this.setState({
+        isLoggedIn: false,
+      })
+    }else {
+      this.setState({
+        isLoggedIn: true,
+      })
+    }
+  }
+  //everytime refresh call the func again
+  componentDidMount(){
+    this.toggleLoggedIn()
   }
 
   handleLogout = () => {
-    this.toggleLoggedIn();
     this.toggle();
     localStorage.removeItem('jwt')
     localStorage.removeItem('userId')
     localStorage.removeItem('userProfileImage')
-    localStorage.removeItem('userUsername')
+    localStorage.removeItem('username')
     alert('you have been logged out')
+    this.toggleLoggedIn();
   }
 
   // toggleLoggedIn= ()=> {
@@ -96,7 +106,7 @@ export default class Example extends React.Component {
             </Form>
 
               <NavItem style={titleNav}>
-                <NavLink href="/profile/">User</NavLink>
+                <NavLink to="/myprofile" tag={Link}>User</NavLink>
               </NavItem>
               
               <NavItem style={titleNav}>

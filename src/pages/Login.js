@@ -50,19 +50,20 @@ handleSubmit = e =>{
     .then(response => {
         console.log(response)
         // localStorage.setItem('jwt',response.data.auth_token)
+        alert('login successfully')
         localStorage.setItem('jwt', response.data.auth_token)
         localStorage.setItem('userId', response.data.user.id)
         localStorage.setItem('userProfileImage', response.data.user.profile_picture)
-        localStorage.setItem('userUsername', response.data.user.username)
+        localStorage.setItem('username', response.data.user.username)
         // close modal
-        alert('working')
         this.props.toggleModalLogin()
         // update navbar's isLoggedIn state
         this.props.toggleLoggedIn()
         
     })
     .catch(error => {
-      console.error(error.response) // so that we know what went wrong if the request failed
+      console.error(error.response)
+      alert('Ops! something went wrong, please try again') // so that we know what went wrong if the request failed
     })
   }
 
@@ -76,7 +77,6 @@ handleSubmit = e =>{
           username.length > 0 &&
           password.length > 0;
     return (
-        // !this.props.isLoggedIn?
       <div>
             <Form onSubmit={this.handleSubmit}>
               <FormGroup>
